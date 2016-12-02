@@ -52,6 +52,12 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-
+        radioButton2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                calendarView.setVisibility(View.INVISIBLE);
+                timePicker.setVisibility(View.VISIBLE);
+            }
+        });
     }
 }
