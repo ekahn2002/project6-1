@@ -13,9 +13,11 @@ import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.TimePicker;
 
+import java.util.Calendar;
+
 public class MainActivity extends AppCompatActivity {
 
-    TextView textView1,textView2;
+    TextView textView2;
     Chronometer chronometer;
     Button button1,button2;
     RadioButton radioButton1, radioButton2;
@@ -57,6 +59,18 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 calendarView.setVisibility(View.INVISIBLE);
                 timePicker.setVisibility(View.VISIBLE);
+            }
+        });
+
+        button2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                chronometer.stop();
+                chronometer.setTextColor(Color.BLUE);
+
+                java.util.Calendar curDate = java.util.Calendar.getInstance();
+                curDate.setTimeInMillis(calendarView.getDate());
+                textView2.setText(Integer.toString(curDate.get(Calendar.YEAR) + (Calendar.MONTH) + (Calendar.DATE)) + (timePicker.getCurrentHour()) + (timePicker.getCurrentMinute()) + " 예약됨");
             }
         });
     }
