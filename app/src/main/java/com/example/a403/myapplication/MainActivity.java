@@ -1,5 +1,6 @@
 package com.example.a403.myapplication;
 
+import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -14,12 +15,11 @@ import android.widget.TimePicker;
 
 public class MainActivity extends AppCompatActivity {
 
-    TextView textView2;
+    TextView textView1,textView2;
     Chronometer chronometer;
     Button button1,button2;
     RadioGroup radio;
     RadioButton radioButton1, radioButton2;
-    FrameLayout frameLayout;
     TimePicker timePicker;
     CalendarView calendarView;
 
@@ -28,6 +28,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        textView1=(TextView)findViewById(R.id.textView1);
         textView2=(TextView)findViewById(R.id.textView2);
         chronometer=(Chronometer)findViewById(R.id.chronometer);
         button1=(Button)findViewById(R.id.button1);
@@ -35,7 +36,6 @@ public class MainActivity extends AppCompatActivity {
         radio=(RadioGroup)findViewById(R.id.radio);
         radioButton1=(RadioButton)findViewById(R.id.radioButton1);
         radioButton2=(RadioButton)findViewById(R.id.radioButton2);
-        frameLayout=(FrameLayout)findViewById(R.id.frameLayout);
         timePicker=(TimePicker)findViewById(R.id.timePicker);
         calendarView=(CalendarView)findViewById(R.id.calendarView);
 
@@ -43,15 +43,14 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 chronometer.start();
+                textView1.setTextColor(Color.RED);
             }
         });
 
         radio.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup group, int checkedId) {
-                if(radioButton1.isChecked()){
 
-                }
             }
         });
     }
