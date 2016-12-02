@@ -1,90 +1,85 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_main"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
-    tools:context="com.example.a403.myapplication.MainActivity"
-    android:weightSum="1">
+    tools:context="com.example.a403.myapplication.MainActivity">
 
 
-
-        <Chronometer
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/chronometer"
-            android:layout_gravity="center"
-            android:format="예약이 걸린 시간:%s"
-            android:layout_weight="1" />
-
+    <Chronometer
+        android:id="@+id/chronometer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:format="예약이 걸린 시간 %s" />
 
 
     <Button
-        android:text="예약 시작"
+        android:id="@+id/button1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/button1" />
+        android:text="예약 시작" />
 
     <RadioGroup
+        android:orientation="horizontal"
+        android:id="@+id/radio"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:id="@+id/radio">
+        android:layout_height="match_parent">
 
         <RadioButton
-            android:text="날짜 설정 (캘린더뷰)"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:checked="true"
             android:id="@+id/radioButton1"
-            android:layout_weight="1" />
-
-        <RadioButton
-            android:text="시간 설정"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="날짜 설정 (캘린더뷰)" />
+
+        <RadioButton
             android:id="@+id/radioButton2"
-            android:layout_weight="1" />
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="시간 설정" />
     </RadioGroup>
 
     <FrameLayout
-        android:layout_weight="1"
+        android:id="@+id/frameLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/frameLayout"
-        >
+        android:layout_weight="1">
 
         <CalendarView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
             android:id="@+id/calendarView"
-            />
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
 
         <TimePicker
+            android:id="@+id/timePicker"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/timePicker"
-            android:visibility="invisible"/>
+            android:visibility="invisible" />
 
     </FrameLayout>
 
     <LinearLayout
-        android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
 
         <Button
-            android:text="예약 완료"
+            android:id="@+id/button2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/button2" />
+            android:text="예약 완료" />
 
         <TextView
-            android:text=""
+            android:id="@+id/textView2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/textView2"
-            android:layout_weight="1" />
+            android:layout_weight="1"
+            android:text="" />
     </LinearLayout>
 
 </LinearLayout>

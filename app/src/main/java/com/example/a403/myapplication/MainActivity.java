@@ -18,7 +18,6 @@ public class MainActivity extends AppCompatActivity {
     TextView textView1,textView2;
     Chronometer chronometer;
     Button button1,button2;
-    RadioGroup radio;
     RadioButton radioButton1, radioButton2;
     TimePicker timePicker;
     CalendarView calendarView;
@@ -28,12 +27,10 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        textView1=(TextView)findViewById(R.id.textView1);
         textView2=(TextView)findViewById(R.id.textView2);
         chronometer=(Chronometer)findViewById(R.id.chronometer);
         button1=(Button)findViewById(R.id.button1);
         button2=(Button)findViewById(R.id.button2);
-        radio=(RadioGroup)findViewById(R.id.radio);
         radioButton1=(RadioButton)findViewById(R.id.radioButton1);
         radioButton2=(RadioButton)findViewById(R.id.radioButton2);
         timePicker=(TimePicker)findViewById(R.id.timePicker);
@@ -43,15 +40,18 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 chronometer.start();
-                textView1.setTextColor(Color.RED);
+                chronometer.setTextColor(Color.RED);
             }
         });
 
-        radio.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+        radioButton1.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onCheckedChanged(RadioGroup group, int checkedId) {
-
+            public void onClick(View v) {
+                calendarView.setVisibility(View.VISIBLE);
+                timePicker.setVisibility(View.INVISIBLE);
             }
         });
+
+
     }
 }
